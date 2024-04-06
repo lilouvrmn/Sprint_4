@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3286cb55-e7fa-4076-8df3-21e0eb3856e3" name="Changes" comment="" />
+    <list default="true" id="3286cb55-e7fa-4076-8df3-21e0eb3856e3" name="Changes" comment="begin 3">
+      <change beforePath="$PROJECT_DIR$/src/main/java/praktikum/Pages/DataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/praktikum/Pages/DataSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/praktikum/Pages/EnvConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/praktikum/Pages/EnvConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/praktikum/Pages/FaqTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/praktikum/Pages/FaqTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/praktikum/Pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/praktikum/Pages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/praktikum/Pages/OrderButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/praktikum/Pages/OrderButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/praktikum/Pages/OrderPageOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/praktikum/Pages/OrderPageOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/praktikum/Pages/OrderPageRent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/praktikum/Pages/OrderPageRent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/praktikum/Pages/StatusPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/praktikum/Pages/StatusPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/praktikum/DriverRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/praktikum/DriverRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/praktikum/FaqTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/praktikum/FaqTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/praktikum/InvalidOrderNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/praktikum/InvalidOrderNumberTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/praktikum/OrderScooterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/praktikum/OrderScooterTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,11 +43,36 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "JUnit.FaqTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "kotlin-language-version-configured": "true"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="FaqTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint_4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="praktikum.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="praktikum" />
+      <option name="MAIN_CLASS_NAME" value="praktikum.FaqTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FaqTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -44,9 +82,38 @@
       <option name="presentableId" value="Default" />
       <updated>1712381894619</updated>
     </task>
+    <task id="LOCAL-00001" summary="begin!">
+      <option name="closed" value="true" />
+      <created>1712382547356</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712382547356</updated>
+    </task>
+    <task id="LOCAL-00002" summary="begin 2">
+      <option name="closed" value="true" />
+      <created>1712382787684</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712382787684</updated>
+    </task>
+    <task id="LOCAL-00003" summary="begin 3">
+      <option name="closed" value="true" />
+      <created>1712382836592</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712382836592</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="begin!" />
+    <MESSAGE value="begin 2" />
+    <MESSAGE value="begin 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="begin 3" />
   </component>
 </project>

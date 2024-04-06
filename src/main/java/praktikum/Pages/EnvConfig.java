@@ -1,4 +1,3 @@
-
 package praktikum.Pages;
 
 public class EnvConfig {
