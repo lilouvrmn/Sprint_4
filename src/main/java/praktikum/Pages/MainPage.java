@@ -17,11 +17,7 @@ public class MainPage {
     private final By orderField = By.cssSelector(".Input_Input__1iN_Z");
     private final By orderStatusField = By.className("Header_Link__1TAG7");
     private final By goButton = By.cssSelector("[class*=Header_Button__]");
-    private final By orderButton = By.cssSelector("[class*=Header_Button__]");
-    private final By orderHeader = By.className("Order_Header__BZXOb");
     private final By buttonAcceptCookie = By.id("rcc-confirm-button");
-    private final String cookieButton = "App_CookieButton__3cvqF";
-    private final String ButtonForOrder = ".//button[@class='Button_Button__ra12g']";
     private final By midlButtonForOrder = By.cssSelector(".Button_Middle__1CSJM");
     private final By buttonOrderTop = By.xpath(".//div[starts-with(@class,'Header_Nav')]//button[text()='Заказать']");
     private final By buttonOrderBottom = By.xpath(".//div[contains(@class,'FinishButton')]//button[text()='Заказать']");
@@ -68,9 +64,8 @@ public class MainPage {
         return this;
     }
 
-    public MainPage waitLoadAfterClickQuestion(By labelResult) {
+    public void waitLoadAfterClickQuestion(By labelResult) {
         (new WebDriverWait(this.driver, Duration.ofSeconds(10L))).until(ExpectedConditions.visibilityOfElementLocated(labelResult));
-        return this;
     }
 
     public MainPage(WebDriver driver) {
@@ -126,11 +121,9 @@ public class MainPage {
                 break;
             case 1:
                 JavascriptExecutor js = (JavascriptExecutor)this.driver;
-                js.executeScript("window.scrollTo(0, document.body.scrollHeight)", new Object[0]);
+                js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
                 WebElement buttonOrder = this.driver.findElement(this.buttonOrderBottom);
-                (new WebDriverWait(this.driver, Duration.ofSeconds(10L))).until((driver) -> {
-                    return buttonOrder.isDisplayed();
-                });
+                (new WebDriverWait(this.driver, Duration.ofSeconds(10L))).until((driver) -> buttonOrder.isDisplayed());
                 buttonOrder.click();
         }
 

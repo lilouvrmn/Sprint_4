@@ -23,14 +23,12 @@ public class OrderPageRent {
     }
 
     public void loadOrderPageRent() {
-        (new WebDriverWait(this.driver, Duration.ofSeconds(10L))).until((driver1) -> {
-            return this.driver.findElement(this.headerAboutRent).getText() != null && !this.driver.findElement(By.className("Order_Header__BZXOb")).getText().isEmpty();
-        });
+        (new WebDriverWait(this.driver, Duration.ofSeconds(10L))).until((driver1) -> this.driver.findElement(this.headerAboutRent).getText() != null && !this.driver.findElement(By.className("Order_Header__BZXOb")).getText().isEmpty());
     }
 
     public void inputDateOrder(String dateOrder) {
-        this.driver.findElement(this.calendar).sendKeys(new CharSequence[]{dateOrder});
-        this.driver.findElement(this.calendar).sendKeys(new CharSequence[]{Keys.ENTER});
+        this.driver.findElement(this.calendar).sendKeys(dateOrder);
+        this.driver.findElement(this.calendar).sendKeys(Keys.ENTER);
     }
 
     public void inputRentalPeriod(String rental) {
@@ -43,7 +41,7 @@ public class OrderPageRent {
     }
 
     public void inputComment(String comment) {
-        this.driver.findElement(this.commentField).sendKeys(new CharSequence[]{comment});
+        this.driver.findElement(this.commentField).sendKeys(comment);
     }
 
     public void clickOrderButton() {

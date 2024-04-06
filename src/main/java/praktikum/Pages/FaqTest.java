@@ -36,6 +36,4 @@ public class FaqTest {
     public static final String TEXT_ANSWER_6 = "Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои.";
     public static final String TEXT_ANSWER_7 = "Да, обязательно. Всем самокатов! И Москве, и Московской области.";
 
-    public FaqTest() {
-    }
 }

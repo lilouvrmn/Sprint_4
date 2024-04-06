@@ -11,9 +11,6 @@ public class InvalidOrderNumberTest {
     @Rule
     public DriverRule driverRule = new DriverRule();
 
-    public InvalidOrderNumberTest() {
-    }
-
     @Test
     public void invalidOrderNumber() {
         WebDriver driver = this.driverRule.getDriver();

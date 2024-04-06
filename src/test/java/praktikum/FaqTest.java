@@ -1,22 +1,22 @@
 package praktikum;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import praktikum.Pages.MainPage;
+
+import static praktikum.Pages.EnvConfig.BASE_URL;
+import static praktikum.Pages.FaqTest.*;
 
 @RunWith(Parameterized.class)
 public class FaqTest {
     private WebDriver driver;
-    private final String site = "https://qa-scooter.praktikum-services.ru/";
+    private final String site = BASE_URL;
     private final By question;
     private final By answer;
     private final By labelResult;
@@ -31,25 +31,24 @@ public class FaqTest {
 
     @Parameters
     public static Object[][] getParameters() {
-        return new Object[][]{{praktikum.Pages.FaqTest.QUESTION_0, praktikum.Pages.FaqTest.ANSWER_0, praktikum.Pages.FaqTest.ITEM_ANSWER_0, "Сутки — 400 рублей. Оплата курьеру — наличными или картой."}, {praktikum.Pages.FaqTest.QUESTION_1, praktikum.Pages.FaqTest.ANSWER_1, praktikum.Pages.FaqTest.ITEM_ANSWER_1, "Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим."}, {praktikum.Pages.FaqTest.QUESTION_2, praktikum.Pages.FaqTest.ANSWER_2, praktikum.Pages.FaqTest.ITEM_ANSWER_2, "Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение дня. Отсчёт времени аренды начинается с момента, когда вы оплатите заказ курьеру. Если мы привезли самокат 8 мая в 20:30, суточная аренда закончится 9 мая в 20:30."}, {praktikum.Pages.FaqTest.QUESTION_3, praktikum.Pages.FaqTest.ANSWER_3, praktikum.Pages.FaqTest.ITEM_ANSWER_3, "Только начиная с завтрашнего дня. Но скоро станем расторопнее."}, {praktikum.Pages.FaqTest.QUESTION_4, praktikum.Pages.FaqTest.ANSWER_4, praktikum.Pages.FaqTest.ITEM_ANSWER_4, "Пока что нет! Но если что-то срочное — всегда можно позвонить в поддержку по красивому номеру 1010."}, {praktikum.Pages.FaqTest.QUESTION_5, praktikum.Pages.FaqTest.ANSWER_5, praktikum.Pages.FaqTest.ITEM_ANSWER_5, "Самокат приезжает к вам с полной зарядкой. Этого хватает на восемь суток — даже если будете кататься без передышек и во сне. Зарядка не понадобится."}, {praktikum.Pages.FaqTest.QUESTION_6, praktikum.Pages.FaqTest.ANSWER_6, praktikum.Pages.FaqTest.ITEM_ANSWER_6, "Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои."}, {praktikum.Pages.FaqTest.QUESTION_7, praktikum.Pages.FaqTest.ANSWER_7, praktikum.Pages.FaqTest.ITEM_ANSWER_7, "Да, обязательно. Всем самокатов! И Москве, и Московской области."}};
+        return new Object[][]{
+                {QUESTION_0, ANSWER_0, ITEM_ANSWER_0, TEXT_ANSWER_0},
+                {QUESTION_1, ANSWER_1, ITEM_ANSWER_1, ITEM_ANSWER_1},
+                {QUESTION_2, ANSWER_2, ITEM_ANSWER_2, ITEM_ANSWER_2},
+                {QUESTION_3, ANSWER_3, ITEM_ANSWER_3, ITEM_ANSWER_3},
+                {QUESTION_4, ANSWER_4, ITEM_ANSWER_4, ITEM_ANSWER_4},
+                {QUESTION_5, ANSWER_5, ITEM_ANSWER_5, ITEM_ANSWER_5},
+                {QUESTION_6, ANSWER_6, ITEM_ANSWER_6, ITEM_ANSWER_6},
+                {QUESTION_7, ANSWER_7, ITEM_ANSWER_7, ITEM_ANSWER_7}};
     }
 
-    @Before
-    public void startUp() {
-        WebDriverManager.chromedriver().setup();
-        this.driver = new ChromeDriver();
-        this.driver.get("https://qa-scooter.praktikum-services.ru/");
-    }
+    @Rule
+    public DriverFactory driverFactory = new DriverFactory();
 
     @Test
     public void checkQuestions() {
         (new MainPage(this.driver)).waitForLoadMainPage().scrollToQuestions().clickQuestion(this.question).waitLoadAfterClickQuestion(this.labelResult);
         String result = this.driver.findElement(this.answer).getText();
         Assert.assertEquals(this.expected, result);
-    }
-
-    @After
-    public void teardown() {
-        this.driver.quit();
     }
 }
