@@ -31,15 +31,16 @@ public class FaqTest {
 
     @Parameters
     public static Object[][] getParameters() {
-        return new Object[][]{
-                {QUESTION_0, ANSWER_0, ITEM_ANSWER_0, TEXT_ANSWER_0},
-                {QUESTION_1, ANSWER_1, ITEM_ANSWER_1, ITEM_ANSWER_1},
-                {QUESTION_2, ANSWER_2, ITEM_ANSWER_2, ITEM_ANSWER_2},
-                {QUESTION_3, ANSWER_3, ITEM_ANSWER_3, ITEM_ANSWER_3},
-                {QUESTION_4, ANSWER_4, ITEM_ANSWER_4, ITEM_ANSWER_4},
-                {QUESTION_5, ANSWER_5, ITEM_ANSWER_5, ITEM_ANSWER_5},
-                {QUESTION_6, ANSWER_6, ITEM_ANSWER_6, ITEM_ANSWER_6},
-                {QUESTION_7, ANSWER_7, ITEM_ANSWER_7, ITEM_ANSWER_7}};
+        Object[][] parameters = new Object[QUESTIONS.length][4];
+
+        for (int i = 0; i < QUESTIONS.length; i++) {
+            parameters[i][0] = QUESTIONS[i];
+            parameters[i][1] = ANSWERS[i];
+            parameters[i][2] = ITEM_ANSWERS[i];
+            parameters[i][3] = TEXT_ANSWERS[i];
+        }
+
+        return parameters;
     }
 
     @Rule

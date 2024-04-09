@@ -9,7 +9,7 @@ import praktikum.Pages.StatusPage;
 public class InvalidOrderNumberTest {
     private final String INVALID_ORDER_NUMBER = "123";
     @Rule
-    public DriverRule driverRule = new DriverRule();
+    public DriverFactory driverRule = new DriverFactory();
 
     @Test
     public void invalidOrderNumber() {
