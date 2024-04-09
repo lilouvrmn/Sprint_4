@@ -88,7 +88,7 @@ public class MainPage {
         try {
             this.driver.findElement(locatorBy);
             return true;
-        } catch (NoSuchElementException var3) {
+        } catch (NoSuchElementException noSuchElementException) {
             return false;
         }
     }
@@ -101,7 +101,7 @@ public class MainPage {
         try {
             (new WebDriverWait(this.driver, Duration.ofSeconds(2L))).until(ExpectedConditions.elementToBeClickable(faqElement.findElement(this.accordionButton)));
             return true;
-        } catch (NoSuchElementException var3) {
+        } catch (NoSuchElementException noSuchElementException) {
             return false;
         }
     }
