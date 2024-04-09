@@ -41,19 +41,19 @@ public class OrderScooterTest {
     }
 
     @Parameters
-    public Collection<Object[]> data() {
+    public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {"Юлия", "Верман", "Большая Академическая", 75, "+79991112233", "01.05.2024", "чёрный жемчуг", "Спасибо"},
-                {"Анастасия", "Осадченко", "Кутузовская", 24, "+79994445566", "10.05.2024", "серая безысходность", "Пожалуйста"}
-    });
+                {"Юлия", "Верман", "Большая Академическая", 75, "+79991112233", "01.05.2024", "2 суток", "чёрный жемчуг", "Спасибо"},
+                {"Анастасия", "Осадченко", "Кутузовская", 24, "+79994445566", "10.05.2024", "3 суток", "серая безысходность", "Пожалуйста"}
+    });}
 
         @Test
-        public void OrderScooter(){
+        public void orderScooter(){
             WebDriver driver = this.driverFactory.getDriver();
             MainPage main = new MainPage(driver);
             main.open();
             main.closeCookie();
-            main.OrderButtonClick();
+            main.orderButtonClick();
             OrderPageOrder order = new OrderPageOrder(driver);
             order.loadOrderPageOrder();
             order.inputName(this.name);
@@ -75,12 +75,12 @@ public class OrderScooterTest {
         }
 
     @Test
-    public void OrderScooterMidlButton(){
+    public void orderScooterMidlButton(){
         WebDriver driver = this.driverFactory.getDriver();
         MainPage main = new MainPage(driver);
         main.open();
         main.closeCookie();
-        main.MidlOrderButton();
+        main.midlOrderButton();
         OrderPageOrder order = new OrderPageOrder(driver);
         order.loadOrderPageOrder();
         order.inputName(this.name);
@@ -101,4 +101,4 @@ public class OrderScooterTest {
         Assert.assertTrue("Заказ не оформлен", rent.isOrderCreated());
     }
 
-}  }
+}

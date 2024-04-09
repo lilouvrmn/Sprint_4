@@ -35,7 +35,9 @@ public class DriverFactory extends ExternalResource {
 
         private void initFirefox() {
             WebDriverManager.firefoxdriver().setup();
-            System.setProperty("webdriver.gecko.driver", "/Users/lilou/your/path/geckodriver");
+            System.setProperty("webdriver.gecko.driver", System.getenv("FIREFOX_DRIVER_PATH"));
+//            System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/your/path/geckodriver");
+//            System.setProperty("webdriver.gecko.driver", "/Users/lilou/your/path/geckodriver");
             var opts = new FirefoxOptions();
            opts.configureFromEnv();
             driver = new FirefoxDriver(opts);
