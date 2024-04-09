@@ -136,11 +136,11 @@ public class MainPage {
 
     }
 
-    public void OrderButtonClick() {
+    public void orderButtonClick() {
         this.driver.findElement(By.xpath(".//button[@class='Button_Button__ra12g']")).click();
     }
 
-    public void MidlOrderButton() {
+    public void midlOrderButton() {
         WebElement element = this.driver.findElement(this.midlButtonForOrder);
         ((JavascriptExecutor)this.driver).executeScript("arguments[0].scrollIntoView();", new Object[]{element});
         this.driver.findElement(this.midlButtonForOrder).click();
